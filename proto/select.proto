@@ -108,11 +108,19 @@ message DAGRequest {
 
 	// Represents the maximum size of one packet, any generated string, or any parameter sent as long data.
 	optional uint64 max_allowed_packet = 13;
+
+	// Represents the tidb system endian.
+	optional Endian tidb_system_endian = 14 [(gogoproto.nullable) = false];
 }
 
 enum EncodeType {
 	TypeDefault = 0;
 	TypeChunk = 1;
+}
+
+enum Endian {
+    LittleEndian = 0;
+    BigEndian = 1;
 }
 
 message StreamResponse {
