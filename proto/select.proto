@@ -119,8 +119,8 @@ enum EncodeType {
 }
 
 message ChunkMemoryLayout {
-	// Represents the tidb system endian
-	optional Endian tidb_system_endian = 1 [(gogoproto.nullable) = false];
+	// Represents the endian.
+	optional Endian endian = 1 [(gogoproto.nullable) = false];
 }
 
 enum Endian {
