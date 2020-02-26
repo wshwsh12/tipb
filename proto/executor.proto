@@ -39,6 +39,7 @@ message TableScan {
 	optional int64 table_id = 1 [(gogoproto.nullable) = false];
 	repeated ColumnInfo columns = 2;
 	optional bool desc = 3 [(gogoproto.nullable) = false];
+	optional BloomFilter bloom = 4;
 }
 
 message IndexScan {
@@ -92,4 +93,11 @@ message ExecutorExecutionSummary {
 
 	// How many times executor's `next()` is called.
 	optional uint64 num_iterations = 3;
+}
+
+message BloomFilter {
+	// Bloom filter container
+	repeated fixed64 bit_set = 1;
+	// Column indices of join keys
+	repeated int64 col_idx = 2;
 }

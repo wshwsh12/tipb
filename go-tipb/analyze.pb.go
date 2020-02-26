@@ -38,6 +38,7 @@
 		TopN
 		Limit
 		ExecutorExecutionSummary
+		BloomFilter
 		FieldType
 		Expr
 		RpnExpr
