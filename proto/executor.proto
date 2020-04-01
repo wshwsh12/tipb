@@ -54,7 +54,7 @@ message Selection {
 	repeated Expr conditions = 1;
 	repeated RpnExpr rpn_conditions = 2;
 	// Bloom
-	optional BloomFilter bloom = 3;
+	repeated BloomFilter bloom = 3;
 }
 
 message Projection {
